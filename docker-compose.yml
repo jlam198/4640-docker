@@ -1,0 +1,15 @@
+---
+version: '3'
+services:
+  app:
+    image: jlam198/4640web
+    restart: always
+    env_file:
+      - variables.env
+  html:
+    image: jlam198/4640nginx
+    restart: always
+    ports:
+      - 12080:80
+    env_file:
+      - variables.env
